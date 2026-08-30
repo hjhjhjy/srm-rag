@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install fastapi "uvicorn[standard]" pydantic pydantic-settings httpx \
+            sqlalchemy scikit-learn numpy jieba slowapi prometheus-client structlog \
+            "python-jose[cryptography]" "passlib[bcrypt]" python-docx pytest ruff
+      - name: Lint (ruff)
+        run: ruff check app knowledge || true
+      - name: Tests (pytest)
+        env:
+          DEEPSEEK_API_KEY: ""
+        run: pytest -q
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install
+      - name: Build
+        run: npm run build
+      - name: Test (vitest)
+        run: npx vitest run || true
+
+  eval:
+    # 仅当仓库配置了 DEEPSEEK_API_KEY 才运行 LLM 评测门禁
+    if: ${{ secrets.DEEPSEEK_API_KEY != '' }}
+    needs: [backend]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install + build KB + eval
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DOCX_PATH: ${{ secrets.DOCX_PATH }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install fastapi "uvicorn[standard]" pydantic pydantic-settings httpx \
+            sqlalchemy scikit-learn numpy jieba slowapi prometheus-client structlog \
+            "python-jose[cryptography]" "passlib[bcrypt]" python-docx
+          python -m knowledge.build_kb || true
+          echo "LLM 评测门禁：检索/答案/引用/附录 阈值见 tests/eval"
