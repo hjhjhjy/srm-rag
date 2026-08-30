@@ -1,0 +1,26 @@
+# srm-supplier-assistant 生产依赖清单
+# 纯 CPU 部署（推荐，避免拉取约 2.5GB 的 CUDA 版 torch）：
+#   先执行  pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   再执行  pip install -r requirements.txt
+# 含 NVIDIA GPU 的环境可跳过上一步，直接 pip install -r requirements.txt（安装 CUDA 版 torch）
+
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.5
+pydantic-settings>=2.1
+httpx>=0.27
+sqlalchemy>=2.0
+torch>=2.2
+sentence-transformers>=2.3
+psycopg2-binary>=2.9
+rank-bm25>=0.2
+scikit-learn>=1.3
+numpy>=1.24
+jieba>=0.42
+slowapi>=0.1.9
+prometheus-client>=0.19
+structlog>=24.1
+python-jose[cryptography]>=3.3
+passlib[bcrypt]>=1.7
+python-docx>=1.1
+# chromadb>=0.4   # 可选：仅当 vectorstore_provider=chroma 时使用；默认 pgvector，无需安装
