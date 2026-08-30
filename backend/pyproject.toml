@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "srm-supplier-assistant"
+version = "1.0.0"
+description = "青山利康 SRM 供应商智能问答助手（企业级 RAG 系统）"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "pydantic>=2.5",
+    "pydantic-settings>=2.1",
+    "httpx>=0.27",
+    "sqlalchemy>=2.0",
+    # 稠密向量（生产默认）：BGE/M3E 本地模型 + CrossEncoder 精排
+    # 注：torch 默认会拉取含 CUDA 的版本（约 2.5GB）；纯 CPU 部署请用 CPU 索引安装，
+    # 见 deploy/Dockerfile 中的 --index-url https://download.pytorch.org/whl/cpu
+    "torch>=2.2",
+    "sentence-transformers>=2.3",
+    # 向量库：pgvector（生产默认）
+    "psycopg2-binary>=2.9",
+    # BM25 关键词召回 / 本地开发兜底（TF-IDF 稀疏向量）
+    "rank-bm25>=0.2",
+    "scikit-learn>=1.3",
+    "numpy>=1.24",
+    "jieba>=0.42",
+    # 可选本地向量库
+    "chromadb>=0.4",
+    "slowapi>=0.1.9",
+    "prometheus-client>=0.19",
+    "structlog>=24.1",
+    "python-jose[cryptography]>=3.3",
+    "passlib[bcrypt]>=1.7",
+    "python-docx>=1.1",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["app", "knowledge"]
+lint.select = ["E", "F", "I", "W", "UP", "B"]
+lint.ignore = ["E501", "B008", "E402"]
+
+[tool.black]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+warn_unused_ignores = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
