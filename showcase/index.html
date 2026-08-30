@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>青山利康 SRM 供应商智能问答助手 · 项目展示</title>
+<style>
+  :root{
+    --primary:#1f6feb; --bg:#f5f7fa; --panel:#fff; --text:#1f2329; --weak:#8a8f99;
+    --border:#e5e6eb; --chip:#e8f0fe;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.65}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  header.hero{background:linear-gradient(135deg,#1f6feb,#3b8eff);color:#fff;padding:56px 20px 48px}
+  header.hero .wrap{display:flex;flex-direction:column;gap:10px}
+  .badge{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:20px;font-size:13px;width:fit-content}
+  h1{margin:6px 0 0;font-size:30px}
+  .sub{font-size:16px;opacity:.92}
+  section{padding:34px 0;border-bottom:1px solid var(--border)}
+  h2{font-size:21px;margin:0 0 14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px}
+  .card h3{margin:0 0 6px;font-size:15px;color:var(--primary)}
+  .card p{margin:0;font-size:13.5px;color:var(--weak)}
+  /* 架构图 */
+  .arch{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px}
+  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;justify-content:center}
+  .box{border:1px solid var(--border);border-radius:10px;padding:10px 14px;background:var(--bg);font-size:13px;text-align:center;min-width:120px}
+  .box.b{flex:1;min-width:150px}
+  .box.hl{border-color:var(--primary);background:var(--chip);color:var(--primary);font-weight:600}
+  .arrow{text-align:center;color:var(--weak);margin:8px 0}
+  .small{font-size:13px;color:var(--weak)}
+  pre{background:#0f1115;color:#e6e8eb;border-radius:10px;padding:14px 16px;overflow:auto;font-size:12.5px}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .demo input{padding:9px 12px;border:1px solid var(--border);border-radius:9px;width:320px;max-width:100%;font-size:14px}
+  .demo button{background:var(--primary);color:#fff;border:none;border-radius:9px;padding:9px 16px;cursor:pointer;font-size:14px}
+  iframe#live{width:100%;height:560px;border:1px solid var(--border);border-radius:12px;margin-top:12px;background:#fff}
+  .placeholder{height:200px;border:2px dashed var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--weak);margin-top:12px}
+  footer{padding:26px 0;color:var(--weak);font-size:13px;text-align:center}
+  a{color:var(--primary)}
+  .pill{display:inline-block;background:var(--chip);color:var(--primary);border-radius:6px;padding:2px 8px;font-size:12px;margin:2px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">企业级 RAG 问答系统 · 可写进简历</span>
+    <h1>青山利康 SRM 供应商智能问答助手</h1>
+    <div class="sub">面向供应商的检索增强问答（RAG）系统，嵌入 SRM 系统，帮助供应商自助使用系统。<br/>
+    基于《SRM 业务蓝图 V5.0》，答案带蓝图流程码（QS_SRM_*）出处引用。</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <h2>核心能力</h2>
+    <div class="grid">
+      <div class="card"><h3>真·大模型问答</h3><p>DeepSeek 流式生成，未配 Key 自动降级检索直答，演示无忧。</p></div>
+      <div class="card"><h3>混合检索 + 重排</h3><p>向量 + BM25 + RRF 融合；LLM 重排提升 Top-N 相关性。</p></div>
+      <div class="card"><h3>引用溯源</h3><p>每个答案标注 QS_SRM_* 流程码与来源片段，可点击查看。</p></div>
+      <div class="card"><h3>鉴权 / RBAC</h3><p>JWT（供应商/管理员）+ 服务级 API Key，端点级权限控制。</p></div>
+      <div class="card"><h3>限流 / 可观测</h3><p>按 IP 限流；结构化日志；Prometheus 指标端点。</p></div>
+      <div class="card"><h3>运营后台</h3><p>管理员查看会话/消息/反馈/知识库/检索命中统计。</p></div>
+      <div class="card"><h3>专业前端</h3><p>React+Vite+TS：流式、引用卡、反馈、主题、iframe 桥接。</p></div>
+      <div class="card"><h3>工程外壳</h3><p>ruff/black/mypy、pytest+Vitest、CI、Docker、MIT。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>系统架构</h2>
+    <div class="arch">
+      <div class="row">
+        <div class="box hl">SRM 系统（父页）</div>
+        <div class="box">iframe · postMessage<br/>ready / resize / theme / auth</div>
+        <div class="box hl">前端 React+Vite+TS<br/>流式·引用卡·反馈·主题</div>
+      </div>
+      <div class="arrow">▼  /api（CORS · 鉴权 · 限流）</div>
+      <div class="row">
+        <div class="box b">后端 FastAPI</div>
+        <div class="box">ChatService 编排<br/>意图→检索→LLM→引用→持久化</div>
+        <div class="box b">/api/metrics<br/>Prometheus</div>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="row">
+        <div class="box">混合检索<br/>向量+BM25+RRF</div>
+        <div class="box">LLM 重排</div>
+        <div class="box">DeepSeek 生成</div>
+        <div class="box">知识库<br/>docx→分块→向量</div>
+      </div>
+      <div class="arrow">▼</div>
+      <div class="row">
+        <div class="box">SQLite 持久化<br/>会话·消息·反馈·用户</div>
+      </div>
+    </div>
+    <p class="small" style="margin-top:12px">详情见仓库 <a href="../docs/ARCHITECTURE.md">docs/ARCHITECTURE.md</a>。</p>
+  </section>
+
+  <section>
+    <h2>嵌入 SRM（iframe 片段）</h2>
+    <pre><code>&lt;iframe
+  src="https://your-deploy-host/"
+  width="420" height="720"
+  style="border:0;border-radius:12px"
+  title="青山利康 SRM 供应商智能助手"
+  allow="clipboard-write"&gt;&lt;/iframe&gt;</code></pre>
+    <p class="small">父页可通过 <code>postMessage</code> 下发 <code>theme</code> / <code>auth</code>（JWT）实现主题同步与单点登录。完整协议见 <a href="../docs/embed-guide.md">docs/embed-guide.md</a>。</p>
+  </section>
+
+  <section class="demo">
+    <h2>在线演示</h2>
+    <p class="small">将你部署后的地址填入，即可在此内嵌实时体验（需你的服务可公网访问）：</p>
+    <div>
+      <input id="url" placeholder="https://your-deploy-host/" />
+      <button onclick="loadDemo()">加载演示</button>
+    </div>
+    <div id="framebox">
+      <div class="placeholder">填入部署地址后点击「加载演示」；或本地运行 <code>npm run dev</code> + 后端 <code>uvicorn</code> 体验。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>本地运行</h2>
+    <pre><code># 后端
+cd backend
+pip install fastapi uvicorn pydantic-settings httpx sqlalchemy scikit-learn numpy \
+  jieba slowapi prometheus-client structlog "python-jose[cryptography]" "passlib[bcrypt]" python-docx
+cp ../.env.example ../.env        # 填写 DEEPSEEK_API_KEY
+python -m knowledge.build_kb      # 首次构建知识库
+uvicorn app.main:app --port 8000
+
+# 前端
+cd frontend &amp;&amp; npm install &amp;&amp; npm run dev   # http://localhost:5173</code></pre>
+    <p class="small">Docker 一键：<code>docker compose -f deploy/docker-compose.yml up -d --build</code></p>
+  </section>
+
+</div>
+
+<footer>
+  青山利康 SRM 供应商智能问答助手 · 企业级 RAG 问答系统演示项目 · MIT License
+</footer>
+
+<script>
+  function loadDemo(){
+    var u = document.getElementById('url').value.trim();
+    if(!u) return;
+    if(!/^https?:\/\//.test(u)) u = 'https://' + u;
+    document.getElementById('framebox').innerHTML =
+      '<iframe id="live" src="'+u+'" title="SRM 助手演示"></iframe>';
+  }
+</script>
+</body>
+</html>
