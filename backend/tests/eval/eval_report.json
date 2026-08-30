@@ -1,0 +1,454 @@
+{
+  "summary": {
+    "total": 20,
+    "retrieval_acc": 0.9,
+    "answer_acc": 0.85,
+    "citation_acc": 0.9,
+    "appendix_acc": 0.8333333333333334
+  },
+  "rows": [
+    {
+      "question": "如何注册成为青山利康供应商？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "n/a",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_SM_0001"
+      ],
+      "found_appendix": [
+        "interface",
+        "message"
+      ]
+    },
+    {
+      "question": "注册需要提交哪些文件？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "OK",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_SC_0003",
+        "QS_SRM_SM_0001"
+      ],
+      "found_appendix": [
+        "form",
+        "message",
+        "report"
+      ]
+    },
+    {
+      "question": "资质准入需要准备哪些材料？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": false,
+      "answer_detail": "kw miss ['质量协议']",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "OK",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_PO_0006",
+        "QS_SRM_PO_0009",
+        "QS_SRM_SC_0003",
+        "QS_SRM_SM_0002",
+        "QS_SRM_SM_0007"
+      ],
+      "found_appendix": [
+        "form"
+      ]
+    },
+    {
+      "question": "收到整改通知（QS_SRM_QM_0001）怎么办？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "OK",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_QM_0001",
+        "QS_SRM_RM_0001",
+        "QS_SRM_SC_0001"
+      ],
+      "found_appendix": [
+        "form",
+        "message",
+        "warning"
+      ]
+    },
+    {
+      "question": "我的资质快到期了怎么处理？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "OK",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_RM_0001",
+        "QS_SRM_SM_0002",
+        "QS_SRM_SM_0003"
+      ],
+      "found_appendix": [
+        "warning"
+      ]
+    },
+    {
+      "question": "物料价格即将到期（提前30天）怎么处理？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "OK",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_MD_0004",
+        "QS_SRM_PO_0002",
+        "QS_SRM_RM_0001",
+        "QS_SRM_SC_0001",
+        "QS_SRM_SC_0002",
+        "QS_SRM_SM_0002"
+      ],
+      "found_appendix": [
+        "warning"
+      ]
+    },
+    {
+      "question": "收到询价单如何报价？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "n/a",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_MD_0004",
+        "QS_SRM_RM_0003",
+        "QS_SRM_SC_0001",
+        "QS_SRM_SC_0002"
+      ],
+      "found_appendix": [
+        "form",
+        "message"
+      ]
+    },
+    {
+      "question": "竞价和招标怎么参与？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "n/a",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_CM_0002",
+        "QS_SRM_SC_0001",
+        "QS_SRM_SC_0002",
+        "QS_SRM_SC_0003",
+        "QS_SRM_SM_0010"
+      ],
+      "found_appendix": [
+        "form"
+      ]
+    },
+    {
+      "question": "收到合同单如何查收与签署？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "OK",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_CM_0002",
+        "QS_SRM_PO_0003",
+        "QS_SRM_PO_0004",
+        "QS_SRM_RM_0003",
+        "QS_SRM_SM_0003"
+      ],
+      "found_appendix": [
+        "message",
+        "warning"
+      ]
+    },
+    {
+      "question": "采购订单怎么接收、确认、发货、退货？",
+      "n_results": 8,
+      "retrieval_pass": false,
+      "retrieval_detail": "missing ['QS_SRM_PO_0008', 'QS_SRM_PO_0010']",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": false,
+      "appendix_pass": false,
+      "appendix_detail": "no warning in ['form', 'report']",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_PO_0002",
+        "QS_SRM_PO_0003",
+        "QS_SRM_PO_0004",
+        "QS_SRM_PO_0005"
+      ],
+      "found_appendix": [
+        "form",
+        "report"
+      ]
+    },
+    {
+      "question": "如何发起对账、上传发票？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": false,
+      "answer_detail": "kw miss ['确认']",
+      "citation_pass": true,
+      "appendix_pass": false,
+      "appendix_detail": "no message in ['form']",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_CM_0002",
+        "QS_SRM_PO_0006",
+        "QS_SRM_PO_0008",
+        "QS_SRM_RM_0002",
+        "QS_SRM_RM_0003",
+        "QS_SRM_RM_0005"
+      ],
+      "found_appendix": [
+        "form"
+      ]
+    },
+    {
+      "question": "收到赔偿金单或附加费用单怎么处理？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "n/a",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_RM_0001",
+        "QS_SRM_RM_0002",
+        "QS_SRM_RM_0003"
+      ],
+      "found_appendix": [
+        "message",
+        "report",
+        "warning"
+      ]
+    },
+    {
+      "question": "我的付款进度在哪里查？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "OK",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_CM_0004",
+        "QS_SRM_PO_0004",
+        "QS_SRM_RM_0002",
+        "QS_SRM_RM_0003",
+        "QS_SRM_RM_0005",
+        "QS_SRM_SC_0001"
+      ],
+      "found_appendix": [
+        "report"
+      ]
+    },
+    {
+      "question": "我的绩效考核在哪里查看？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "OK",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_RM_0003",
+        "QS_SRM_SM_0006",
+        "QS_SRM_SM_0010"
+      ],
+      "found_appendix": [
+        "form",
+        "message",
+        "report"
+      ]
+    },
+    {
+      "question": "SRM系统中有哪些报表可以查？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "no-code(chk kw)",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "OK",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_CM_0001",
+        "QS_SRM_MD_0004",
+        "QS_SRM_MD_0007",
+        "QS_SRM_SC_0003",
+        "QS_SRM_SM_0001",
+        "QS_SRM_SM_0007",
+        "QS_SRM_SM_0010"
+      ],
+      "found_appendix": [
+        "report"
+      ]
+    },
+    {
+      "question": "物料主数据是通过什么接口从 BIP 同步到 SRM 的？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "OK",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_MD_0001",
+        "QS_SRM_MD_0002",
+        "QS_SRM_MD_0005",
+        "QS_SRM_PO_0008",
+        "QS_SRM_SM_0002",
+        "QS_SRM_SM_0007"
+      ],
+      "found_appendix": [
+        "interface"
+      ]
+    },
+    {
+      "question": "系统里“消息”和“预警”有什么区别？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "no-code(chk kw)",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "n/a",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_PO_0001",
+        "QS_SRM_SM_0002",
+        "QS_SRM_SM_0007",
+        "QS_SRM_SM_0008"
+      ],
+      "found_appendix": [
+        "message",
+        "warning"
+      ]
+    },
+    {
+      "question": "样品确认流程是怎样的？",
+      "n_results": 8,
+      "retrieval_pass": false,
+      "retrieval_detail": "missing ['QS_SRM_SM_0005']",
+      "answer_pass": false,
+      "answer_detail": "kw miss ['中试']",
+      "citation_pass": false,
+      "appendix_pass": true,
+      "appendix_detail": "n/a",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_MD_0003",
+        "QS_SRM_MD_0008",
+        "QS_SRM_SM_0002",
+        "QS_SRM_SM_0003",
+        "QS_SRM_SM_0004",
+        "QS_SRM_SM_0007"
+      ],
+      "found_appendix": [
+        "form"
+      ]
+    },
+    {
+      "question": "收到工程变更单（ECN）怎么处理？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "n/a",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_PO_0003",
+        "QS_SRM_RD_0001",
+        "QS_SRM_RM_0001",
+        "QS_SRM_RM_0003",
+        "QS_SRM_SM_0008"
+      ],
+      "found_appendix": [
+        "form",
+        "message",
+        "warning"
+      ]
+    },
+    {
+      "question": "什么是商品首营？",
+      "n_results": 8,
+      "retrieval_pass": true,
+      "retrieval_detail": "OK",
+      "answer_pass": true,
+      "answer_detail": "OK",
+      "citation_pass": true,
+      "appendix_pass": true,
+      "appendix_detail": "n/a",
+      "code_pass": true,
+      "found_codes": [
+        "QS_SRM_MD_0003",
+        "QS_SRM_MD_0008",
+        "QS_SRM_PO_0004",
+        "QS_SRM_SM_0002"
+      ],
+      "found_appendix": [
+        "form"
+      ]
+    }
+  ]
+}
