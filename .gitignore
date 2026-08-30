@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 环境与密钥（切勿提交）
+.env
+.env.local
+*.key
+
+# 运行时数据（知识库索引、SQLite）
+backend/app/data/
+backend/**/data/numpy_index/
+backend/**/data/*.db
+*.db
+
+# 前端
+frontend/node_modules/
+frontend/dist/
+
+# 构建产物
+build/
+dist/
+*.log
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.DS_Store
+
+# 展示站构建（如用过框架）
+showcase/dist/
+
+# 第三方无关目录
+pi/
+
+# 散落的模型权重副本（真实权重见 backend/app/data/models，已整体忽略）
+app/
